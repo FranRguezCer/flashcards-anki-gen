@@ -34,8 +34,8 @@ This is not a simple wrapper. It:
 
 ## 📄 Example Datasets
 
-✔️ *Transformers Paper*: `docs/attention_is_all_you_need.pdf` → `transformers.csv` / `transformers.jsonl`
-✔️ *Russian Vocabulary*: `docs/ru_vocabulary.pdf` → `ru_vocab.csv` / `ru_vocab.jsonl`
+- *Transformers Paper*: `docs/attention_is_all_you_need.pdf` → `transformers.csv` / `transformers.jsonl`
+- *Russian Vocabulary*: `docs/ru_vocabulary.pdf` → `ru_vocab.csv` / `ru_vocab.jsonl`
 
 Run them:
 
