@@ -1,0 +1,349 @@
+{"question": "Who are the authors of the paper 'Attention Is All You Need'?", "answer": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones"}
+{"question": "Which organization are Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, and Llion Jones affiliated with?", "answer": "Google Brain and Google Research"}
+{"question": "What is the email address provided for Ashish Vaswani in the text chunk?", "answer": "avaswani@google.com"}
+{"question": "Who is the author with email usz@google.com?", "answer": "Google Research"}
+{"question": "Who is the author with email llion@google.com?", "answer": "Llion Jones"}
+{"question": "Which institution is Aidan N. Gomez affiliated with?", "answer": "University of Toronto"}
+{"question": "What is the new network architecture proposed in the text chunk?", "answer": "Transformer"}
+{"question": "What does the Transformer network architecture rely on?", "answer": "Attention mechanisms"}
+{"question": "What are the benefits of the Transformer network architecture mentioned in the text chunk?", "answer": "Superior quality, more parallelizable, and requiring significantly less"}
+{"question": "What BLEU score does the model achieve on the WMT 2014 English-to-German translation task?", "answer": "28.4"}
+{"question": "How much does the model improve over the existing best results on the English-to-German translation task?", "answer": "over 2 BLEU"}
+{"question": "What is the BLEU score achieved by the model on the WMT 2014 English-to-French translation task?", "answer": "41.8"}
+{"question": "What did Jakob propose replacing RNNs with?", "answer": "self-attention"}
+{"question": "What tasks was the Transformer successfully applied to?", "answer": "English constituency parsing"}
+{"question": "What type of training data was used for the Transformer in the study?", "answer": "both large and limited training data"}
+{"question": "Who designed and implemented the first Transformer models?", "answer": "Ashish, with Illia"}
+{"question": "What did Noam propose in relation to attention mechanisms?", "answer": "scaled dot-product attention, multi-head attention"}
+{"question": "What position representation did Noam propose?", "answer": "parameter-free"}
+{"question": "What did Niki do in the original codebase and tensor2tensor?", "answer": "designed, implemented, tuned, and evaluated countless model variants"}
+{"question": "What was Llion responsible for?", "answer": "our initial codebase, efficient inference, and visualizations"}
+{"question": "What did Lukasz and Aidan spend long days doing?", "answer": "designing various parts of"}
+{"question": "What did implementing tensor2tensor do for the research?", "answer": "Greatly improved results and massively accelerated the research."}
+{"question": "Where was the work performed?", "answer": "Google Brain and Google Research."}
+{"question": "Where was the 31st Conference on Neural Information Processing Systems (NIPS 2017) held?", "answer": "Long Beach, CA, USA."}
+{"question": "What are some state-of-the-art approaches in sequence modeling and transduction problems?", "answer": "Recurrent neural networks, long short-term memory, and gated recurrent neural networks"}
+{"question": "What are some examples of sequence modeling and transduction problems?", "answer": "Language modeling and machine translation"}
+{"question": "Which types of neural networks have been firmly established in these areas?", "answer": "Recurrent neural networks, long short-term memory, and gated recurrent neural networks"}
+{"question": "What do recurrent language models and encoder-decoder architectures aim to do?", "answer": "Push the boundaries"}
+{"question": "How do recurrent models typically factor computation?", "answer": "Along the symbol positions of the input and output sequences"}
+{"question": "How do recurrent models align positions to steps in computation time?", "answer": "By generating a sequence of hidden"}
+{"question": "What is the function of the hidden state in a sequential model?", "answer": "It depends on the previous hidden state and the input for the current position."}
+{"question": "Why is parallelization challenging in training examples with a sequential nature?", "answer": "Memory constraints limit batching across examples at longer sequence lengths."}
+{"question": "What has recent work achieved to address the limitations of sequential models?", "answer": "Recent work has made progress in overcoming the challenges of parallelization and memory constraints in sequential models."}
+{"question": "What are some techniques that have led to significant improvements in computational efficiency?", "answer": "Factorization tricks and conditional computation"}
+{"question": "What is a fundamental constraint of sequential computation?", "answer": "It remains despite improvements in efficiency and performance"}
+{"question": "What has become an integral part of compelling sequence modeling and transduction?", "answer": "Attention mechanisms"}
+{"question": "What is the proposed model architecture in the text chunk?", "answer": "The Transformer"}
+{"question": "What does the Transformer model architecture eschew?", "answer": "Recurrence"}
+{"question": "What is used in conjunction with attention mechanisms in most cases?", "answer": "A recurrent network"}
+{"question": "What allows for significantly more parallelization?", "answer": "The Transformer"}
+{"question": "How long does it take for the Transformer to reach a new state of the art in translation quality?", "answer": "As little as twelve hours"}
+{"question": "What forms the foundation of the Extended Neural GPU?", "answer": "The goal of reducing sequential computation"}
+{"question": "What are some models that use convolutional neural networks as basic building blocks?", "answer": "ByteNet, ConvS2S"}
+{"question": "What do ByteNet, ConvS2S, and other models do with hidden representations?", "answer": "Compute in parallel for all input and output positions"}
+{"question": "How do the number of operations required to relate signals from two arbitrary input or output positions behave in these models?", "answer": "They grow"}
+{"question": "What is the difference in distance handling between ConvS2S and ByteNet?", "answer": "ConvS2S handles distance linearly, while ByteNet handles distance logarithmically."}
+{"question": "Why is it more difficult to learn dependencies between distant positions in ConvS2S and ByteNet?", "answer": "The distance handling in ConvS2S and ByteNet makes it more difficult to learn dependencies between distant positions."}
+{"question": "How does the Transformer address the issue of learning dependencies between distant positions?", "answer": "The Transformer reduces the number of operations to a constant value, but this results in reduced effective resolution due to averaging attention-weighted positions."}
+{"question": "What is self-attention?", "answer": "Self-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence."}
+{"question": "Where has self-attention been used successfully?", "answer": "Self-attention has been used successfully in tasks including reading comprehension and abstractive summarization."}
+{"question": "What is another name for self-attention?", "answer": "Self-attention is sometimes called intra-attention."}
+{"question": "What are end-to-end memory networks based on?", "answer": "Recurrent attention mechanism"}
+{"question": "What tasks have end-to-end memory networks been shown to perform well on?", "answer": "Simple-language question answering and language modeling tasks"}
+{"question": "What is an alternative to sequence-aligned recurrence in end-to-end memory networks?", "answer": "Recurrent attention mechanism"}
+{"question": "What is the Transformer model relying entirely on to compute representations of its input and output?", "answer": "Self-attention"}
+{"question": "What does the Transformer model not use for computing representations of its input and output?", "answer": "Sequence-aligned RNNs or convolution"}
+{"question": "What is the unique feature of the Transformer model compared to previous models?", "answer": "Relying entirely on self-attention"}
+{"question": "What is the typical structure of competitive neural sequence transduction models?", "answer": "Most competitive neural sequence transduction models have an encoder-decoder structure."}
+{"question": "What is the role of the encoder in the encoder-decoder structure?", "answer": "The encoder maps an input sequence of symbol representations to a sequence of continuous representations."}
+{"question": "What does the decoder do in the encoder-decoder structure?", "answer": "Given the continuous representations from the encoder, the decoder generates an output."}
+{"question": "What is the process of generating symbols in a sequence one element at a time?", "answer": "Auto-regressive model"}
+{"question": "What does the auto-regressive model consume as additional input when generating the next symbol?", "answer": "Previously generated symbols"}
+{"question": "In what manner does the auto-regressive model operate when generating symbols?", "answer": "One element at a time"}
+{"question": "What is the overall architecture of the Transformer model?", "answer": "The Transformer model uses stacked self-attention and point-wise, fully connected layers for both the encoder and decoder."}
+{"question": "How many identical layers make up the encoder in the Transformer model?", "answer": "The encoder is composed of a stack of N = 6 identical layers."}
+{"question": "What does each layer in the encoder of the Transformer model consist of?", "answer": "Each layer in the encoder has two parts: self-attention and point-wise, fully connected layers."}
+{"question": "What are the two sub-layers described in the text chunk?", "answer": "The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network."}
+{"question": "What is employed around each of the two sub-layers?", "answer": "A residual connection."}
+{"question": "What follows the residual connection around each sub-layer?", "answer": "Layer normalization."}
+{"question": "What is the dimension of the outputs produced by all sub-layers in the model and embedding layers?", "answer": "dmodel = 512"}
+{"question": "How many identical layers is the decoder composed of?", "answer": "N = 6"}
+{"question": "What additional sub-layer does the decoder insert in each encoder layer?", "answer": "A third sub-layer performing multi-head"}
+{"question": "What is employed around each of the sub-layers in the encoder and decoder stacks?", "answer": "Residual connections"}
+{"question": "What modification is made to the self-attention sub-layer in the decoder stack?", "answer": "Preventing positions from attending to subsequent positions"}
+{"question": "How is the output embeddings offset in the decoder stack to ensure masking?", "answer": "By one position"}
+{"question": "What can predictions for position i depend on?", "answer": "Predictions for position i can depend only on the known outputs at positions less than i."}
+{"question": "How can an attention function be described?", "answer": "An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors."}
+{"question": "How is the output computed in an attention function?", "answer": "The output is computed as a weighted sum."}
+{"question": "What is Scaled Dot-Product Attention?", "answer": "It is an attention mechanism where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key."}
+{"question": "What does Multi-Head Attention consist of?", "answer": "Multi-Head Attention consists of several attention layers running in parallel."}
+{"question": "What is the key feature of Scaled Dot-Product Attention?", "answer": "The key feature is that the weight assigned to each value is computed by a compatibility function of the query with the corresponding key."}
+{"question": "What is the name of the attention mechanism described in this text chunk?", "answer": "Scaled Dot-Product Attention"}
+{"question": "What are the dimensions of the keys and queries in this attention mechanism?", "answer": "dk"}
+{"question": "How are the weights on the values obtained in Scaled Dot-Product Attention?", "answer": "By applying a softmax function after dividing the dot products by √dk"}
+{"question": "What are the matrices used in computing the attention function?", "answer": "Matrices Q, K, and V are used in computing the attention function."}
+{"question": "What is the formula for computing the matrix of outputs in the attention function?", "answer": "The formula is Attention(Q, K, V) = softmax(QKT / √dk) * V."}
+{"question": "What are the two most commonly used attention functions?", "answer": "The two most commonly used attention functions are additive attention and dot-product."}
+{"question": "What is the scaling factor for dot-product attention?", "answer": "1/sqrt(dk)"}
+{"question": "How does additive attention compute the compatibility function?", "answer": "Using a feed-forward network with a single hidden layer"}
+{"question": "In terms of theoretical complexity, how do dot-product attention and additive attention compare?", "answer": "They are similar"}
+{"question": "What can be implemented using highly optimized matrix multiplication code?", "answer": "Additive attention"}
+{"question": "For which values of dk does additive attention outperform dot product attention without scaling?", "answer": "larger values of dk"}
+{"question": "What is suspected to be better for large values of dk?", "answer": "Additive attention"}
+{"question": "What effect can large dot products have on the softmax function?", "answer": "Pushing the softmax function into regions with extremely small gradients."}
+{"question": "How do we counteract the effect of large dot products in the softmax function?", "answer": "By scaling the dot products by 1/sqrt(dk)."}
+{"question": "What is the approach in Multi-Head Attention instead of using a single attention function?", "answer": "Using multiple attention functions with dmodel-dimensional keys, values, and queries."}
+{"question": "What is the benefit of linearly projecting queries, keys, and values?", "answer": "To transform them into different dimensions (dk, dk, dv) for better attention computation."}
+{"question": "What dimensions are queries, keys, and values projected to?", "answer": "Queries to dk dimension, keys to dk dimension, and values to dv dimension."}
+{"question": "What is performed on the projected versions of queries, keys, and values?", "answer": "The attention function is performed in parallel on each of them."}
+{"question": "What are the components of q and k assumed to be in the given illustration?", "answer": "Independent random variables with mean 0 and variance 1."}
+{"question": "What is the mean of the dot product q · k?", "answer": "0."}
+{"question": "What is the variance of the dot product q · k?", "answer": "dk."}
+{"question": "What is the purpose of multi-head attention in a model?", "answer": "To jointly attend to information from different representation subspaces at different positions."}
+{"question": "How does having multiple attention heads differ from a single attention head?", "answer": "Multiple attention heads allow for better capturing of diverse information, while a single head may result in averaging and inhibiting this capability."}
+{"question": "What is the formula for MultiHead(Q, K, V) in the context of multi-head attention?", "answer": "MultiHead(Q, K, V) = Concat(head1, ...,headh)WO where headi = Attention(QWQi, KWKi)"}
+{"question": "What are the parameter matrices used in the attention mechanism?", "answer": "The parameter matrices used are WQ, WK, WV, and WO."}
+{"question": "How many parallel attention layers are employed in this work?", "answer": "This work employs 8 parallel attention layers."}
+{"question": "What is the dimensionality used for dk, dv, and dmodel in each attention head?", "answer": "Each attention head uses dk = dv = dmodel/h = 64."}
+{"question": "What type of attention does the Transformer model use in three different ways?", "answer": "Multi-head attention"}
+{"question": "In 'encoder-decoder attention' layers of the Transformer, where do the queries come from?", "answer": "Previous decoder layer"}
+{"question": "In 'encoder-decoder attention' layers of the Transformer, where do the memory keys and values come from?", "answer": "Output of the encoder"}
+{"question": "What is the purpose of the attention mechanism in the decoder of a sequence-to-sequence model?", "answer": "To attend over all positions in the input sequence."}
+{"question": "What is contained in the encoder of a sequence-to-sequence model?", "answer": "Self-attention layers."}
+{"question": "Where do the keys, values, and queries come from in a self-attention layer?", "answer": "They all come from the same place, which is the output of the previous layer."}
+{"question": "What can each position in the encoder attend to?", "answer": "All positions in the previous layer of the encoder."}
+{"question": "What do self-attention layers in the decoder allow each position to attend to?", "answer": "All positions in the decoder up to and including that position."}
+{"question": "Why do we need to prevent leftward information flow in the decoder?", "answer": "To preserve the auto-regressive property."}
+{"question": "What values are masked out in the input of the softmax in scaled dot-product attention?", "answer": "All values corresponding to illegal connections are masked out by setting them to -∞."}
+{"question": "What is included in each layer of the encoder and decoder besides attention sub-layers?", "answer": "Each layer contains a fully connected Position-wise Feed-Forward Network."}
+{"question": "What is the purpose of masking out values in the softmax input in attention mechanisms?", "answer": "Masking out values helps in handling illegal connections and focusing only on relevant information."}
+{"question": "What is a connected feed-forward network?", "answer": "A network that is applied to each position separately and identically."}
+{"question": "What does the FFN function consist of?", "answer": "Two linear transformations with a ReLU activation in between."}
+{"question": "Are the linear transformations the same across different positions?", "answer": "Yes, they are the same, but they use different parameters."}
+{"question": "What is the dimensionality of the input and output in the described model?", "answer": "dmodel = 512"}
+{"question": "What is the dimensionality of the inner-layer in the described model?", "answer": "dff = 2048"}
+{"question": "What is used to convert the input in the described model?", "answer": "learned embeddings"}
+{"question": "What is used to convert tokens and output tokens to vectors of dimension dmodel?", "answer": "Learned linear transformation"}
+{"question": "What function is used to convert the decoder output to predicted next-token probabilities?", "answer": "Softmax function"}
+{"question": "In the model described, what weight matrix is shared between the two embedding layers and the pre-softmax?", "answer": "Same weight matrix"}
+{"question": "What do we do in the embedding layers?", "answer": "Multiply weights by √dmodel."}
+{"question": "What is the complexity per layer for Self-Attention?", "answer": "O(n^2 * d)"}
+{"question": "What is the minimum number of sequential operations for Self-Attention?", "answer": "O(1)"}
+{"question": "What is the maximum path length for Self-Attention?", "answer": "O(1)"}
+{"question": "What is the time complexity of Self-Attention operation in terms of n and d?", "answer": "O(n^2 · d)"}
+{"question": "What is the space complexity of Recurrent operation in terms of n?", "answer": "O(n)"}
+{"question": "What is the time complexity of Convolutional operation in terms of k, n, and d?", "answer": "O(k · n · d^2)"}
+{"question": "What are added to the input embeddings at the bottoms of the encoder and decoder stacks?", "answer": "positional encodings"}
+{"question": "What is the dimension of the positional encodings in relation to the embeddings?", "answer": "same dimension dmodel"}
+{"question": "What are the choices of positional encodings mentioned in the text?", "answer": "learned and fixed"}
+{"question": "What is the formula for calculating the positional encoding for even dimensions?", "answer": "P E(pos,2i) = sin(pos/10000*2i/dmodel)"}
+{"question": "What is the formula for calculating the positional encoding for odd dimensions?", "answer": "P E(pos,2i+1) = cos(pos/10000*2i/dmodel)"}
+{"question": "Why was the chosen positional encoding function a combination of sine and cosine waves?", "answer": "To allow the model to easily learn to attend by capturing different frequencies of positional information."}
+{"question": "What did the experiment involve in terms of positional embeddings?", "answer": "The experiment involved using fixed offset k and learned positional embeddings."}
+{"question": "What did the comparison show between fixed offset k and learned positional embeddings?", "answer": "The comparison showed that the two versions produced nearly identical results."}
+{"question": "Why was the sinusoidal version chosen in the experiment?", "answer": "The sinusoidal version was chosen as it produced nearly identical results to the learned positional embeddings."}
+{"question": "Why is self-attention used in models?", "answer": "It may allow the model to extrapolate to sequence lengths longer than the ones encountered during training."}
+{"question": "What is compared in the section regarding self-attention layers?", "answer": "Various aspects of self-attention layers are compared to recurrent and convolutional layers commonly used for mapping variable-length sequences of symbol representations."}
+{"question": "What is one desideratum considered when using self-attention in a sequence transduction encoder or decoder?", "answer": "Total computational complexity per layer"}
+{"question": "What is another desideratum considered when using self-attention in a sequence transduction encoder or decoder?", "answer": "Amount of computation"}
+{"question": "How many desiderata are mentioned in the text chunk?", "answer": "Three"}
+{"question": "What is the first key factor affecting the ability to learn long-range dependencies in a network?", "answer": "The amount of computation that can be parallelized"}
+{"question": "What is the second key factor affecting the ability to learn long-range dependencies in a network?", "answer": "The amount of memory required for the network"}
+{"question": "What is the third key factor affecting the ability to learn long-range dependencies in a network?", "answer": "The path length between long-range dependencies"}
+{"question": "Why is it important to have shorter paths between positions in input and output sequences?", "answer": "It is easier to learn long-range dependencies."}
+{"question": "What is compared to evaluate the ease of learning long-range dependencies?", "answer": "The maximum path length between any two input and output positions in networks composed of different layer types."}
+{"question": "What does the comparison of maximum path length help in networks?", "answer": "It helps in assessing the ease of learning long-range dependencies."}
+{"question": "What is the key difference in terms of operations between a self-attention layer and a recurrent layer?", "answer": "A self-attention layer connects all positions with a constant number of sequentially executed operations, whereas a recurrent layer requires O(n) sequential operations."}
+{"question": "Which layer type is faster in terms of computational complexity, self-attention layers or recurrent layers?", "answer": "Self-attention layers are faster than recurrent layers when the sequence length is considered."}
+{"question": "How do self-attention layers compare to recurrent layers in terms of computational speed?", "answer": "Self-attention layers are faster than recurrent layers due to requiring a constant number of operations regardless of sequence length."}
+{"question": "What is the typical relationship between the length of a representation (n) and the dimensionality of the representation (d) in state-of-the-art models for machine translation?", "answer": "The length n is often smaller than the representation dimensionality d."}
+{"question": "What are examples of sentence representations used by state-of-the-art models in machine translation?", "answer": "Word-piece and byte-pair representations."}
+{"question": "How can computational performance be improved for tasks involving very long sequences in the context of self-attention?", "answer": "By restricting self-attention to consider only a neighborhood of size r."}
+{"question": "What is the potential increase in maximum path length by centering the input sequence around the respective output position?", "answer": "O(n/r)"}
+{"question": "How many convolutional layers are required with kernel width k < n to connect all pairs of input and output positions?", "answer": "O(n/k)"}
+{"question": "How many convolutional layers are needed in the case of contiguous kernels to connect all pairs of input and output positions?", "answer": "O(n/k)"}
+{"question": "What is the time complexity of convolutional layers?", "answer": "O(k · n · d + n · d2)"}
+{"question": "What is the time complexity of dilated convolutions?", "answer": "O(logk(n))"}
+{"question": "How does the complexity change with separable convolutions?", "answer": "Decreases considerably to O(k · n · d + n · d2)"}
+{"question": "What is convolution equal to in the model?", "answer": "The combination of a self-attention layer and a point-wise feed-forward layer."}
+{"question": "What is a side benefit of using self-attention in the model?", "answer": "It could yield more interpretable models."}
+{"question": "What can be inspected from the models to understand attention distributions?", "answer": "Attention distributions can be inspected to understand the models better."}
+{"question": "What dataset did the models in the text chunk train on?", "answer": "WMT 2014 English-German dataset"}
+{"question": "How many tasks do heads clearly learn to perform?", "answer": "Different tasks"}
+{"question": "What does the behavior of many heads appear to be related to?", "answer": "Syntactic and semantic structure of the sentences"}
+{"question": "How were the sentences encoded?", "answer": "Using byte-pair encoding [3]"}
+{"question": "What is the size of the shared source-target vocabulary for the sentences?", "answer": "About 37000 tokens"}
+{"question": "How were sentence pairs batched together?", "answer": "By approximate sequence length"}
+{"question": "How many source tokens were in each sentence pair in the batch?", "answer": "Approximately 25000 source tokens"}
+{"question": "What hardware was used for training the models?", "answer": "One machine with 8 NVIDIA P100 GPUs"}
+{"question": "How long did each training step take for the base models?", "answer": "About 0.4 seconds"}
+{"question": "How many steps were the base models trained for?", "answer": "100,000 steps"}
+{"question": "What was the step time for the big models?", "answer": "1.0 seconds"}
+{"question": "Which optimizer was used in the training process?", "answer": "Adam optimizer"}
+{"question": "What is the formula for the learning rate (lrate) in the given text chunk?", "answer": "lrate = d−0.5"}
+{"question": "How is the learning rate adjusted during training in relation to warmup steps?", "answer": "The learning rate is increased linearly for the first warmup_steps training steps and decreased proportionally to the inverse square root of the step number thereafter."}
+{"question": "How many types of regularization are employed during training as mentioned in the text chunk?", "answer": "Three types of regularization are employed during training."}
+{"question": "Which model achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests?", "answer": "The Transformer"}
+{"question": "At what fraction of the training cost does the Transformer achieve better BLEU scores?", "answer": "A fraction of the training cost"}
+{"question": "What are the BLEU scores of ByteNet, Deep-Att + PosUnk, and GNMT + RL on the English-to-German and English-to-French tests?", "answer": "ByteNet: 23.75, Deep-Att + PosUnk: 39.2, GNMT + RL: 24.6 (EN-DE), 39.92 (EN-FR)"}
+{"question": "What is the performance of the GNMT + RL model in terms of BLEU score, perplexity, and number of parameters?", "answer": "BLEU score: 24.6, Perplexity: 39.92, Parameters: 2.3 · 10^19"}
+{"question": "What is the performance of the ConvS2S model in terms of BLEU score, perplexity, and number of parameters?", "answer": "BLEU score: 25.16, Perplexity: 40.46, Parameters: 9.6 · 10^18"}
+{"question": "What is the performance of the MoE model in terms of BLEU score, perplexity, and number of parameters?", "answer": "BLEU score: 26.03, Perplexity: 40.56, Parameters: 2.0 · 10^19"}
+{"question": "What is the dropout rate used in the base model for the Transformer?", "answer": "0.1"}
+{"question": "Where is dropout applied in the Transformer model?", "answer": "To the output of each sub-layer, before it is added to the sub-layer input and normalized. Additionally, dropout is applied to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks."}
+{"question": "What is the purpose of applying dropout in the Transformer model?", "answer": "To prevent overfitting and improve generalization by randomly dropping out units during training."}
+{"question": "What is the value of label smoothing used during training?", "answer": "0.1"}
+{"question": "How does label smoothing affect perplexity?", "answer": "It hurts perplexity as the model learns to be more unsure."}
+{"question": "What improvements are seen by employing label smoothing?", "answer": "It improves accuracy and BLEU score."}
+{"question": "What BLEU score did the model in Table 2 achieve?", "answer": "28.4"}
+{"question": "How many days did the training of the model take?", "answer": "3.5 days"}
+{"question": "How many GPUs were used for training?", "answer": "8 P100 GPUs"}
+{"question": "What BLEU score did the big model achieve on the WMT 2014 English-to-French translation task?", "answer": "41.0"}
+{"question": "How does the big model perform compared to previously published single models?", "answer": "Outperforms all"}
+{"question": "What was the dropout rate used in training the Transformer (big) model for English-to-French translation?", "answer": "0.1"}
+{"question": "What is the dropout rate used in the model?", "answer": "0.1"}
+{"question": "How many checkpoints were averaged for the base models?", "answer": "5"}
+{"question": "What beam size was used for beam search?", "answer": "4"}
+{"question": "What did the researchers set as the maximum output length during inference?", "answer": "input length + 50"}
+{"question": "What does Table 2 summarize in the text chunk?", "answer": "results and compares translation quality and training costs"}
+{"question": "What did the researchers estimate in terms of floating point operations used for training?", "answer": "number of floating point operations used to train"}
+{"question": "How can the model be estimated?", "answer": "By multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU."}
+{"question": "What is done to evaluate the importance of different components of the Transformer?", "answer": "The base model is varied in different ways, measuring the change in performance on English-to-German translation."}
+{"question": "What is the purpose of varying the base model in different ways?", "answer": "To assess the impact on performance and understand the significance of different components of the Transformer."}
+{"question": "What are the values of TFLOPS for K80, K40, M40, and P100?", "answer": "2.8, 3.7, 6.0, and 9.5 TFLOPS, respectively"}
+{"question": "What is the purpose of the values listed in Table 3?", "answer": "Variations on the Transformer architecture"}
+{"question": "What does 'PPL' stand for in the context of the table?", "answer": "Perplexities per-wordpiece"}
+{"question": "Which development set are the metrics in Table 3 based on?", "answer": "English-to-German translation development set, newstest2013"}
+{"question": "What are the parameters for the model in section A?", "answer": "1 512 512 5.29 24.9\n4 128 128 5.00 25.5\n16 32 32 4.91 25.8\n32 16 16 5.01 25.4"}
+{"question": "What are the parameters for the model in section B?", "answer": "16 5.16 25.1 58\n32 5.01 25.4 60"}
+{"question": "What are the parameters for the model in section C?", "answer": "2 6.11 23.7 36\n4 5.19 25.3 50\n8 4.88 25.5 80\n256 32 32 5.75 24.5 28\n1024 128 128 4.66 26.0 168\n1024 5.12 25.4 53\n4096 4.75 26.2 90"}
+{"question": "What type of positional embedding is used instead of sinusoids?", "answer": "Embedding"}
+{"question": "What method was used for decoding?", "answer": "Beam search"}
+{"question": "Was checkpoint averaging used in the process?", "answer": "No"}
+{"question": "What is the impact of using single-head attention compared to the best setting?", "answer": "0.9 BLEU worse"}
+{"question": "What happens to the quality when too many attention heads are used?", "answer": "Quality drops off"}
+{"question": "How does reducing the attention key size affect model quality?", "answer": "Hurts model quality"}
+{"question": "What does the text suggest about determining compatibility?", "answer": "It suggests that determining compatibility is not easy and that a more sophisticated compatibility function than dot product may be beneficial."}
+{"question": "What observation is made in rows (C) and (D)?", "answer": "The observation made in rows (C) and (D) is that bigger models are better, and dropout is very helpful in avoiding over-fitting."}
+{"question": "What replacement is made in row (E)?", "answer": "In row (E), a replacement is made."}
+{"question": "What type of positional encoding is used in the model?", "answer": "sinusoidal positional encoding with learned positional embeddings"}
+{"question": "What task was used to evaluate if the Transformer can generalize to other tasks?", "answer": "English constituency parsing"}
+{"question": "What specific challenges does English constituency parsing present?", "answer": "the output is subject to strong structural"}
+{"question": "What type of models have not been able to achieve state-of-the-art results in small-data regimes?", "answer": "RNN sequence-to-sequence models"}
+{"question": "What dataset was used to train the 4-layer transformer in the given text chunk?", "answer": "Wall Street Journal (WSJ) portion of the Penn Treebank"}
+{"question": "How many training sentences were used in the training of the 4-layer transformer?", "answer": "about 40K training sentences"}
+{"question": "What was the vocabulary size used for the WSJ only setting?", "answer": "16K tokens"}
+{"question": "What was the vocabulary size used for the semi-supervised setting?", "answer": "32K tokens"}
+{"question": "How was the dropout selection process described in the text?", "answer": "Performed only a small number of experiments"}
+{"question": "What parameters were changed during the evaluation of learning rates and beam size?", "answer": "Only learning rates and beam size were changed."}
+{"question": "What set was used for evaluating the learning rates and beam size?", "answer": "The Section 22 development set was used."}
+{"question": "What remained unchanged during the evaluation?", "answer": "All other parameters remained unchanged from the English-to-German base translation model."}
+{"question": "Which paper achieved an F1 score of 88.3 on English constituency parsing using the Transformer model?", "answer": "Vinyals & Kaiser el al. (2014)"}
+{"question": "What was the F1 score achieved by Dyer et al. (2016) on English constituency parsing using the Transformer model?", "answer": "91.7"}
+{"question": "Which year did Zhu et al. achieve an F1 score of 90.4 on English constituency parsing using the Transformer model?", "answer": "2013"}
+{"question": "What is the accuracy of the Transformer model with 4 layers trained on WSJ data?", "answer": "91.3"}
+{"question": "Which paper introduced a semi-supervised approach with an accuracy of 92.1?", "answer": "McClosky et al. (2006) [26]"}
+{"question": "What is the accuracy of the model with 4 layers trained in a semi-supervised manner?", "answer": "92.7"}
+{"question": "What did Dyer et al. (2016) do to the maximum output length?", "answer": "Increased it to input length + 300."}
+{"question": "What beam size and alpha value did they use?", "answer": "Beam size of 21 and α = 0.3."}
+{"question": "How did their model perform compared to previously reported models?", "answer": "It performed surprisingly well, yielding better results than all previously reported models except one."}
+{"question": "What is the Transformer model based on?", "answer": "The Transformer model is based entirely on sequence transduction."}
+{"question": "What does the Transformer outperform even when trained on a limited dataset?", "answer": "The Transformer outperforms the Berkeley-Parser even when training only on the WSJ training set of 40K sentences."}
+{"question": "What is the key difference between RNN sequence-to-sequence models and the Transformer model?", "answer": "In contrast to RNN sequence-to-sequence models, the Transformer model outperforms the Berkeley-Parser."}
+{"question": "What is commonly used in encoder-decoder architectures?", "answer": "Recurrent layers"}
+{"question": "What does the Transformer replace recurrent layers with?", "answer": "Multi-headed self-attention"}
+{"question": "In translation tasks, why is the Transformer trained faster than architectures based on recurrent or convolutional layers?", "answer": "Significantly faster training speed"}
+{"question": "What tasks do we achieve a new state of the art in English-to-French translation?", "answer": "English-to-French translation tasks"}
+{"question": "What do we plan to apply attention-based models to?", "answer": "other tasks"}
+{"question": "What do we plan to extend the Transformer to?", "answer": "problems involving input and output modalities other than text"}
+{"question": "What is one research goal mentioned in the text chunk?", "answer": "Making generation less sequential"}
+{"question": "Where can the code used to train and evaluate the models be found?", "answer": "https://github.com/tensorflow/tensor2tensor"}
+{"question": "What type of inputs and outputs are mentioned in the text chunk?", "answer": "Images, audio, and video"}
+{"question": "Who are Nal Kalchbrenner and Stephan Gouws?", "answer": "They are individuals who provided comments, corrections, and inspiration."}
+{"question": "What is the title of the paper referenced as [1]?", "answer": "Layer normalization."}
+{"question": "Who are the authors of the paper referenced as [2]?", "answer": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio."}
+{"question": "Who are the authors of the paper 'Massive exploration of neural machine translation architectures'?", "answer": "Denny Britz, Anna Goldie, Minh-Thang Luong, and Quoc V. Le"}
+{"question": "What is the title of the paper by Jianpeng Cheng, Li Dong, and Mirella Lapata?", "answer": "Long short-term memory-networks for machine reading"}
+{"question": "In which year was the paper 'Long short-term memory-networks for machine reading' published?", "answer": "2016"}
+{"question": "Who authored the paper 'Learning phrase representations using rnn encoder-decoder for statistical machine translation'?", "answer": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio"}
+{"question": "What is the title of the paper authored by Francois Chollet in 2016?", "answer": "Xception: Deep learning with depthwise separable convolutions"}
+{"question": "What is the title of the preprint with the identifier arXiv:1610.02357 published in 2016?", "answer": "Empirical evaluation of gated recurrent neural networks on sequence modeling"}
+{"question": "Who are the authors of the paper titled 'Recurrent neural network grammars' presented at NAACL 2016?", "answer": "Chris Dyer, Adhiguna Kuncoro, Miguel Ballesteros, and Noah A. Smith"}
+{"question": "In which year was the paper 'Empirical evaluation of gated recurrent neural networks on sequence modeling' published?", "answer": "2014"}
+{"question": "What is the title of reference [9]?", "answer": "Convolu-tional sequence to sequence learning"}
+{"question": "Who are the authors of reference [9]?", "answer": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N. Dauphin"}
+{"question": "What is the publication year of reference [10]?", "answer": "2013"}
+{"question": "What is the title of the paper with arXiv ID 1308.0850?", "answer": "The title of the paper is not provided in the text chunk."}
+{"question": "Who are the authors of the paper 'Deep residual learning for image recognition'?", "answer": "The authors are Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun."}
+{"question": "In which year was the paper 'Deep residual learning for image recognition' published?", "answer": "The paper was published in 2016."}
+{"question": "What is the title of the paper by Sepp Hochreiter and Jürgen Schmidhuber published in 1997?", "answer": "Long short-term memory"}
+{"question": "Who are the authors of the paper 'Self-training PCFG grammars with latent annotations across languages'?", "answer": "Zhongqiang Huang and Mary Harper"}
+{"question": "In which year was the paper 'Long short-term memory' published?", "answer": "1997"}
+{"question": "What is the title of the paper on pages 832–841 in the Language Processing book?", "answer": "Language Processing"}
+{"question": "Who are the authors of the paper 'Exploring the limits of language modeling'?", "answer": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu"}
+{"question": "In which conference was the paper 'Can active memory replace attention?' presented?", "answer": "Advances in Neural Information Processing Systems (NIPS)"}
+{"question": "What is the title of the paper by Łukasz Kaiser and Ilya Sutskever presented at the International Conference on Learning Representations (ICLR) in 2016?", "answer": "Neural GPUs learn algorithms"}
+{"question": "Who are the authors of the paper 'Neural machine translation in linear time' published as an arXiv preprint in 2017?", "answer": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu"}
+{"question": "In which year was the paper 'Neural machine translation in linear time' published as an arXiv preprint?", "answer": "2017"}
+{"question": "Who are the authors of the paper 'Structured attention networks'?", "answer": "Yoon Kim, Carl Denton, Luong Hoang, and Alexander M. Rush"}
+{"question": "What is the title of the paper by Diederik Kingma and Jimmy Ba?", "answer": "Adam: A method for stochastic optimization"}
+{"question": "Who are the authors of the paper 'Factorization tricks for LSTM networks'?", "answer": "Oleksii Kuchaiev and Boris Ginsburg"}
+{"question": "What is the title of the paper with arXiv ID 1703.10722?", "answer": "Not provided in the text chunk."}
+{"question": "Who are the authors of the paper with arXiv ID 1703.03130?", "answer": "Zhouhan Lin, Minwei Feng, Cicero Nogueira dos Santos, Mo Yu, Bing Xiang, Bowen Zhou, and Yoshua Bengio."}
+{"question": "In which year was the paper with arXiv ID 1511.06114 published?", "answer": "2015."}
+{"question": "Who are the authors of the paper?", "answer": "Minh-Thang Luong, Hieu Pham, and Christopher D Manning"}
+{"question": "What is the title of the paper?", "answer": "Effective approaches to attention-based neural machine translation"}
+{"question": "In which year was the paper published?", "answer": "2015"}
+{"question": "Who are the authors of the paper 'Building a large annotated corpus of English: The Penn Treebank'?", "answer": "Mitchell P Marcus, Mary Ann Marcinkiewicz, and Beatrice Santorini"}
+{"question": "What is the title of the paper by David McClosky, Eugene Charniak, and Mark Johnson?", "answer": "Effective self-training for parsing"}
+{"question": "In which year was the paper 'Building a large annotated corpus of English: The Penn Treebank' published?", "answer": "1993"}
+{"question": "Who are the authors of the paper 'A decomposable attention model'?", "answer": "Ankur Parikh, Oscar Täckström, Dipanjan Das, and Jakob Uszkoreit"}
+{"question": "What is the title of the paper by Romain Paulus, Caiming Xiong, and Richard Socher?", "answer": "A deep reinforced model for abstractive summarization"}
+{"question": "In which year was the paper 'A deep reinforced model for abstractive summarization' published?", "answer": "2017"}
+{"question": "Who are the authors of the paper 'Learning accurate, compact, and interpretable tree annotation'?", "answer": "Slav Petrov, Leon Barrett, Romain Thibaux, and Dan Klein"}
+{"question": "In which conference was the paper 'Learning accurate, compact, and interpretable tree annotation' presented?", "answer": "Proceedings of the 21st International Conference on Computational Linguistics and 44th Annual Meeting of the ACL"}
+{"question": "What is the title of the paper by Ofir Press and Lior Wolf?", "answer": "Using the output embedding to improve language models"}
+{"question": "What is the title of the paper with arXiv ID 1608.05859?", "answer": "The title of the paper is not provided in the text chunk."}
+{"question": "Who are the authors of the paper with arXiv ID 1508.07909?", "answer": "The authors are Rico Sennrich, Barry Haddow, and Alexandra Birch."}
+{"question": "What is the title of the paper authored by Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean?", "answer": "The title of the paper is 'Outrageously large neural networks: The sparsely-gated mixture-of-experts'."}
+{"question": "Who are the authors of the paper titled 'Dropout: a simple way to prevent neural networks from overfitting'?", "answer": "Nitish Srivastava, Geoffrey E Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov"}
+{"question": "What is the title of the paper with arXiv ID 1701.06538?", "answer": "Understanding deep learning requires rethinking generalization"}
+{"question": "Who are the authors of the paper titled 'End-to-end memory'?", "answer": "Sainbayar Sukhbaatar, Arthur Szlam, Jason Weston, and Rob Fergus"}
+{"question": "Who are the editors of Advances in Neural Information Processing Systems 28?", "answer": "C. Cortes, N. D. Lawrence, D. D. Lee, M. Sugiyama, and R. Garnett"}
+{"question": "Who are the authors of the paper 'Sequence to sequence learning with neural networks'?", "answer": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le"}
+{"question": "In which year was the paper 'Sequence to sequence learning with neural networks' published?", "answer": "2014"}
+{"question": "Who are the authors of the paper 'Rethinking the inception architecture for computer vision'?", "answer": "Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jonathon Shlens, and Zbigniew Wojna"}
+{"question": "What is the title of the paper by Vinyals & Kaiser, Koo, Petrov, Sutskever, and Hinton?", "answer": "Grammar as a foreign language"}
+{"question": "Who are the authors of the paper 'Google’s neural machine translation system: Bridging the gap between human and machine translation'?", "answer": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al."}
+{"question": "What is the title of the paper by Jie Zhou, Ying Cao, Xuguang Wang, Peng Li, and Wei Xu?", "answer": "Deep recurrent models"}
+{"question": "What is the title of the paper with the identifier abs/1606.04199 published in 2016?", "answer": "fast-forward connections for neural machine translation"}
+{"question": "Who are the authors of the paper on fast and accurate shift-reduce constituent parsing published in 2013?", "answer": "Muhua Zhu, Yue Zhang, Wenliang Chen, Min Zhang, and Jingbo Zhu"}
+{"question": "In which conference was the paper on shift-reduce constituent parsing presented?", "answer": "Proceedings of the 51st Annual Meeting of the ACL (Volume 1: Long Papers)"}
+{"question": "What are attention visualizations?", "answer": "Attention visualizations are used in machine learning models to show which parts of the input data are being focused on during the prediction process."}
+{"question": "Why have a majority of American governments passed new laws since 2009?", "answer": "A majority of American governments have passed new laws since 2009 to make the registration or voting process more difficult."}
+{"question": "What is the purpose of making the registration or voting process more difficult?", "answer": "The purpose of making the registration or voting process more difficult is to impose stricter requirements or barriers for individuals to participate in the voting process."}
+{"question": "What is shown in Figure 3?", "answer": "An example of the attention mechanism following long-distance dependencies in the encoder self-attention in layer 5 of 6."}
+{"question": "What do many of the attention heads attend to in the example?", "answer": "A distant dependency of the verb 'making', completing the phrase 'making...more difficult'."}
+{"question": "What is the focus of the attentions shown in the example?", "answer": "Distant dependencies related to the verb 'making' and completing the phrase 'making...more difficult'."}
+{"question": "What word is highlighted in the text chunk?", "answer": "'making'"}
+{"question": "What do different colors represent in the text?", "answer": "Different heads"}
+{"question": "How is the content best viewed?", "answer": "In color"}
+{"question": "What is the importance of the application of the Law?", "answer": "Its application should be just."}
+{"question": "Will the Law ever be perfect?", "answer": "No, it will never be perfect."}
+{"question": "What is missing in the application of the Law according to the text?", "answer": "The just application."}
+{"question": "What should the application of the Law be according to the text chunk?", "answer": "The application of the Law should be just."}
+{"question": "What is mentioned as missing in the opinion expressed in the text chunk?", "answer": "The application of the Law being just."}
+{"question": "In what context is the term 'its' used in the text chunk?", "answer": "The term 'its' is used in the context of the Law."}
+{"question": "What is the significance of the number 6 in the text chunk?", "answer": "The attentions are very sharp for this word."}
+{"question": "What is the significance of the number 14 in the text chunk?", "answer": "There is no specific significance mentioned in the provided text."}
+{"question": "What observation can be made about the attentions in relation to the word mentioned?", "answer": "The attentions are noted to be very sharp for this word."}
+{"question": "What is the key for the first flashcard?", "answer": "Input-Input Layer5"}
+{"question": "What is the content of the first flashcard?", "answer": "The Law will never be perfect, but its application should be just - this is what we are missing, in my opinion."}
+{"question": "What is the key for the second flashcard?", "answer": "Input-Input Layer5"}
+{"question": "What is missing in the opinion of the speaker?", "answer": "The application of the Law should be just."}
+{"question": "What is the focus of Figure 5?", "answer": "The attention heads and their behavior related to the sentence structure."}
+{"question": "How many examples are given in Figure 5?", "answer": "Two examples are given."}
+{"question": "What layer of the neural network is being referred to?", "answer": "Layer 5"}
+{"question": "How many total layers are there in this neural network?", "answer": "6"}
+{"question": "What observation was made about the heads in layer 5?", "answer": "They clearly learned to perform different tasks"}
