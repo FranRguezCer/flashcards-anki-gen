@@ -117,7 +117,7 @@ python main.py docs/your_notes.pdf -o output.jsonl --format jsonl
 
 - Direct `.apkg` export for Anki decks
 - Multilingual prompt templates
-- Automated tests
+- More formats
 
 ---
 
