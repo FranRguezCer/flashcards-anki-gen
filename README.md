@@ -15,6 +15,8 @@ Active recall and spaced repetition are proven learning methods. This pipeline t
 This is not a simple wrapper. It:
 
 - 🔀 Splits text into smart overlapping chunks for better context
+- 📄 Analyzes full PDF files locally — no size limit like the standard ChatGPT interface
+- 📂 Handles multiple PDFs in a directory in one run
 - 🗃️ Uses structured prompts for valid JSON output
 - 🧹 Cleans and validates raw LLM output automatically
 - 💾 Exports in formats suited for Anki, Excel, or ML pipelines
