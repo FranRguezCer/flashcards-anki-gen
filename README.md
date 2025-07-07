@@ -1,6 +1,6 @@
 # 🧠 Anki Flashcard Generator – LLM-powered CLI
 
-This project is a **practical CLI tool** that converts any document (PDF, DOCX, TXT) into *Anki-style* flashcards using **LangChain** and **OpenAI LLMs**. It handles document loading, smart chunking, robust prompt formatting, and outputs clean CSV/JSONL ready for spaced repetition.
+This project is a **practical CLI tool** that converts any PDF document into *Anki-style* flashcards using **LangChain** and **OpenAI LLMs**. It handles document loading, smart chunking, robust prompt formatting, and outputs clean CSV/JSONL ready for spaced repetition.
 
 ---
 
@@ -14,7 +14,6 @@ Active recall and spaced repetition are proven learning methods. This pipeline t
 
 This is not a simple wrapper. It:
 
-- 📄 Loads various file types robustly (PDF/DOCX/TXT)
 - 🔀 Splits text into smart overlapping chunks for better context
 - 🗃️ Uses structured prompts for valid JSON output
 - 🧹 Cleans and validates raw LLM output automatically
