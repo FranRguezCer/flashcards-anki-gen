@@ -20,7 +20,7 @@ An intelligent flashcard generator that transforms PDF documents into high-quali
 
 **Performance optimizations**:
 
-- Chunks sized at 2000 chars to minimize LLM calls (~12 chunks for an 11-page PDF vs ~51 at 400 chars)
+- Chunks sized at 2000 chars to minimize LLM calls (~12 chunks for an 11-page PDF vs ~51 at 400 chars in original version)
 - Quality criteria embedded in the generation prompt (single-pass, no separate LLM review)
 - Review node performs fast rule-based validation (dedup, empty field removal, 50% pass-rate threshold)
 
