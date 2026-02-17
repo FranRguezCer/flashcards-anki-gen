@@ -10,50 +10,51 @@ An intelligent flashcard generator that transforms PDF documents into high-quali
 
 ![LangGraph State Graph](assets/graph.png)
 
-| Node | Description | LLM |
-|------|-------------|-----|
-| `parse_document` | Load PDF via PyPDFLoader | No |
-| `chunk_text` | Split into 2000-char overlapping chunks | No |
-| `generate_flashcards` | Generate Q/A pairs per chunk via LCEL chain | Yes |
-| `review_quality` | Rule-based dedup, structural validation, quality gate | No |
-| `export_cards` | Export to CSV (semicolon, UTF-8 BOM) and JSONL | No |
+| Node                    | Description                                           | LLM |
+| ----------------------- | ----------------------------------------------------- | --- |
+| `parse_document`      | Load PDF via PyPDFLoader                              | No  |
+| `chunk_text`          | Split into 2000-char overlapping chunks               | No  |
+| `generate_flashcards` | Generate Q/A pairs per chunk via LCEL chain           | Yes |
+| `review_quality`      | Rule-based dedup, structural validation, quality gate | No  |
+| `export_cards`        | Export to CSV (semicolon, UTF-8 BOM) and JSONL        | No  |
 
 **Performance optimizations**:
+
 - Chunks sized at 2000 chars to minimize LLM calls (~12 chunks for an 11-page PDF vs ~51 at 400 chars)
 - Quality criteria embedded in the generation prompt (single-pass, no separate LLM review)
 - Review node performs fast rule-based validation (dedup, empty field removal, 50% pass-rate threshold)
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|-----------|
-| Orchestration | LangGraph (StateGraph with conditional edges) |
-| LLM Framework | LangChain |
-| LLM Backend | Ollama (mistral-large-3:675b-cloud) |
-| Frontend | Gradio |
-| Containerization | Docker / Docker Compose |
-| Language | Python 3.12 |
+| Component        | Technology                                    |
+| ---------------- | --------------------------------------------- |
+| Orchestration    | LangGraph (StateGraph with conditional edges) |
+| LLM Framework    | LangChain                                     |
+| LLM Backend      | Ollama (mistral-large-3:675b-cloud)           |
+| Frontend         | Gradio                                        |
+| Containerization | Docker / Docker Compose                       |
+| Language         | Python 3.12                                   |
 
 ## Quickstart
 
 ### 1. Install Ollama
 
-Follow the instructions at [ollama.ai](https://ollama.ai/) for your platform, then pull the model:
+Follow the instructions at [ollama.ai](https://ollama.ai/) for your platform, then serve Ollama:
 
 ```bash
-ollama pull mistral-large-3:675b-cloud
+ollama serve
 ```
 
-Verify Ollama is running:
+Verify Ollama is working and run at least once a cloud model (no need to pull any model, free tier ollama accounts can use cloud models):
 
 ```bash
-curl http://localhost:11434/api/tags
+ollama run mistral-large-3:675b-cloud
 ```
 
 ### 2. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/flashcards-anki-gen.git
+git clone https://github.com/FranRguezCer/flashcards-anki-gen.git
 cd flashcards-anki-gen
 ```
 
@@ -117,11 +118,11 @@ After generation completes, download the CSV or JSONL file from the web UI. Impo
 
 ## Configuration
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `OLLAMA_HOST` | `http://localhost:11434` | Ollama API endpoint |
-| `OLLAMA_MODEL` | `mistral-large-3:675b-cloud` | Model name for flashcard generation |
-| `OUTPUT_DIR` | `./output` | Directory for exported CSV and JSONL files |
+| Variable         | Default                        | Description                                |
+| ---------------- | ------------------------------ | ------------------------------------------ |
+| `OLLAMA_HOST`  | `http://localhost:11434`     | Ollama API endpoint                        |
+| `OLLAMA_MODEL` | `mistral-large-3:675b-cloud` | Model name for flashcard generation        |
+| `OUTPUT_DIR`   | `./output`                   | Directory for exported CSV and JSONL files |
 
 ## Project Structure
 
