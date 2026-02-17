@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    network_mode: host
+    environment:
+      - OLLAMA_HOST=http://localhost:11434
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-mistral-large-3:675b-cloud}
+      - OUTPUT_DIR=/app/output
+    volumes:
+      - ./output:/app/output:rw
+      - ./docs:/app/docs:ro

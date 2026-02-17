@@ -1,15 +1,52 @@
-# .gitignore
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
 
 # Virtual environments
-venv/
 .venv/
+venv/
+env/
 
-# Python cache
-__pycache__/
-*.pyc
-
+# Environment and secrets
 .env
+.envrc
 
-# System/editor files
-.DS_Store
+# IDE and editor files
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker overrides
+docker-compose.override.yml
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Output artifacts
+output/*.csv
+output/*.jsonl
+!output/.gitkeep
+
+# Generated files (notebook artifacts)
+/graph.png
+
+# Screen recordings
+*.mp4
+*.mkv
+*.webm
+
+# Git worktrees
+.worktrees/
+worktrees/
+
+# Claude Code
+.claude/
+CLAUDE.md

@@ -1,138 +1,163 @@
-# 🧠 Anki Flashcard Generator – LLM-powered CLI
+# Anki Flashcard Generator -- LangGraph Agentic Workflow
 
-This project is a **practical CLI tool** that converts any PDF document into *Anki-style* flashcards using **LangChain** and **OpenAI LLMs**. It handles document loading, smart chunking, robust prompt formatting, and outputs clean CSV/JSONL ready for spaced repetition.
+An intelligent flashcard generator that transforms PDF documents into high-quality Anki-compatible flashcards using a **LangGraph agentic workflow**. The pipeline features a conditional quality gate that autonomously reviews generated flashcards and triggers regeneration when quality standards are not met -- demonstrating agentic decision-making through state-driven control flow.
 
----
+![Demo](assets/demo.gif)
 
-## 🧭 Context
+## Architecture
 
-Active recall and spaced repetition are proven learning methods. This pipeline turns your own materials into ready-to-import flashcards — ideal for students, language learners, and lifelong learners.
+5-node LangGraph state graph where each node is a pure function that reads from and writes to a shared `FlashcardState` TypedDict. The conditional edge after `review_quality` creates an agentic loop: if the batch fails structural validation, the graph routes back to `generate_flashcards` for a second attempt (capped at 1 retry).
 
----
+![LangGraph State Graph](assets/graph.png)
 
-## 💡 Why This Isn’t Just an OpenAI Wrapper
+| Node | Description | LLM |
+|------|-------------|-----|
+| `parse_document` | Load PDF via PyPDFLoader | No |
+| `chunk_text` | Split into 2000-char overlapping chunks | No |
+| `generate_flashcards` | Generate Q/A pairs per chunk via LCEL chain | Yes |
+| `review_quality` | Rule-based dedup, structural validation, quality gate | No |
+| `export_cards` | Export to CSV (semicolon, UTF-8 BOM) and JSONL | No |
 
-This is not a simple wrapper. It:
+**Performance optimizations**:
+- Chunks sized at 2000 chars to minimize LLM calls (~12 chunks for an 11-page PDF vs ~51 at 400 chars)
+- Quality criteria embedded in the generation prompt (single-pass, no separate LLM review)
+- Review node performs fast rule-based validation (dedup, empty field removal, 50% pass-rate threshold)
 
-- 🔀 Splits text into smart overlapping chunks for better context
-- 📄 Analyzes full PDF files locally — no size limit like the standard ChatGPT interface
-- 📂 Handles multiple PDFs in a directory in one run
-- 🗃️ Uses structured prompts for valid JSON output
-- 🧹 Cleans and validates raw LLM output automatically
-- 💾 Exports in formats suited for Anki, Excel, or ML pipelines
-- ⚡ Runs fully automated from your terminal — repeatable and scalable.
+## Tech Stack
 
----
+| Component | Technology |
+|-----------|-----------|
+| Orchestration | LangGraph (StateGraph with conditional edges) |
+| LLM Framework | LangChain |
+| LLM Backend | Ollama (mistral-large-3:675b-cloud) |
+| Frontend | Gradio |
+| Containerization | Docker / Docker Compose |
+| Language | Python 3.12 |
 
-## 🚀 How It Works
+## Quickstart
 
-1. **Load & Split**: File is parsed and split into chunks.
-2. **Generate**: Each chunk goes through an LLM with a strict Q-A prompt.
-3. **Clean & Validate**: Output is stripped of stray code fences.
-4. **Export**: Save as CSV (default) or JSONL.
+### 1. Install Ollama
 
----
-
-## 📄 Example Datasets
-
-- *Transformers Paper*: `docs/attention_is_all_you_need.pdf` → `transformers.csv` / `transformers.jsonl`
-- *Russian Vocabulary*: `docs/ru_vocabulary.pdf` → `ru_vocab.csv` / `ru_vocab.jsonl`
-
-Run them:
+Follow the instructions at [ollama.ai](https://ollama.ai/) for your platform, then pull the model:
 
 ```bash
-python main.py docs/attention_is_all_you_need.pdf -o transformers.csv
-python main.py docs/ru_vocabulary.pdf -o ru_vocab.csv
+ollama pull mistral-large-3:675b-cloud
 ```
 
----
-
-## 📦 Project Structure
+Verify Ollama is running:
 
 ```bash
-project-root/
-├── assets/                 
-│   └── cli-demo.gif                   # GIF demo showing the CLI in action (you can see it below)
-├── docs/                        
-│   ├── attention_is_all_you_need.pdf  # Example input: Transformers paper
-│   └── ru_vocabulary.pdf              # Example input: Russian vocabulary
-├── flashcards/                  
-│   ├── __init__.py                    # Loads environment variables
-│   ├── exporter.py                    # Exports flashcards to CSV/JSONL
-│   ├── flashcard_chain.py             # Handles prompt + LLM call via LangChain
-│   └── loader_splitter.py             # Loads files & splits into chunks
-├── .env.example                       # Example .env file for your OpenAI key
-├── LICENSE                            # MIT License
-├── main.py                            # CLI entry point script
-├── README.md                          # Project documentation
-├── requirements.txt                   # Python dependencies
-├── ru_vocab.csv                       # Example output: Russian vocab (CSV)
-├── ru_vocab.jsonl                     # Example output: Russian vocab (JSONL)
-├── transformers.csv                   # Example output: Transformers paper (CSV)
-└── transformers.jsonl                 # Example output: Transformers paper (JSONL)
+curl http://localhost:11434/api/tags
 ```
 
----
-
-## ⚙️ Setup
+### 2. Clone the repository
 
 ```bash
-git clone <repo-url>
-cd project-root
-cp .env.example .env  # Add your OPENAI_API_KEY
+git clone https://github.com/yourusername/flashcards-anki-gen.git
+cd flashcards-anki-gen
+```
+
+### 3. Configure environment
+
+```bash
+cp .env.template .env
+```
+
+Edit `.env` if needed (defaults work for local Ollama):
+
+```
+OLLAMA_HOST=http://localhost:11434
+OLLAMA_MODEL=mistral-large-3:675b-cloud
+OUTPUT_DIR=./output
+```
+
+### 4. Run with Docker (recommended)
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+Open [http://localhost:7860](http://localhost:7860), upload a PDF, and click **Generate Flashcards**.
+
+The container uses `network_mode: host` so it reaches Ollama at `localhost:11434` directly. Generated files are persisted to `./output/` on the host.
+
+**Useful commands:**
+
+```bash
+# View real-time logs
+docker compose logs -f app
+
+# Rebuild after code changes
+docker compose up -d --build
+
+# Stop the container
+docker compose down
+```
+
+### 4b. Run locally (alternative)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+
+python app.py
 ```
 
----
-
-## 🖥️ Usage
+### 4c. Run via CLI
 
 ```bash
-# Generate CSV flashcards
-python main.py docs/your_notes.pdf -o output.csv
-
-# Or JSONL format
-python main.py docs/your_notes.pdf -o output.jsonl --format jsonl
+python main.py --mode cli --file docs/ru_vocabulary.pdf --output ./output
 ```
 
----
+### 5. Download your flashcards
 
-## 🎥 CLI Demo
+After generation completes, download the CSV or JSONL file from the web UI. Import the CSV into Anki using semicolon (`;`) as the field separator.
 
-<div align="center">
-  <img src="assets/cli-demo.gif" alt="CLI Demo" width="600"/>
-</div>
+## Configuration
 
----
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `OLLAMA_HOST` | `http://localhost:11434` | Ollama API endpoint |
+| `OLLAMA_MODEL` | `mistral-large-3:675b-cloud` | Model name for flashcard generation |
+| `OUTPUT_DIR` | `./output` | Directory for exported CSV and JSONL files |
 
-## 🧰 Tech Stack
+## Project Structure
 
-- Python, LangChain ≥ 0.2
-- OpenAI API (Chat models)
-- dotenv, tqdm, argparse
+```
+flashcards-anki-gen/
+  agent/
+    __init__.py                  # Exports build_graph, FlashcardState
+    state.py                     # FlashcardState TypedDict with annotated reducer
+    prompts.py                   # Quality-aware generation prompt template
+    llm.py                       # Shared ChatOllama factory and JSON utilities
+    graph.py                     # StateGraph definition and compilation
+    nodes/
+      __init__.py                # Re-exports all node functions
+      parse_document.py          # Node 1: Load PDF via PyPDFLoader
+      chunk_text.py              # Node 2: RecursiveCharacterTextSplitter (2000 chars)
+      generate_flashcards.py     # Node 3: LCEL chain.batch() parallel generation
+      review_quality.py          # Node 4: Rule-based validation and dedup
+      export_cards.py            # Node 5: Export to CSV and JSONL
+  notebook/
+    agent_template.ipynb         # Self-contained development notebook
+  output/                        # Generated flashcard files
+  docs/                          # Test PDF documents
+  assets/                        # Demo gif and graph visualization
+  app.py                         # Gradio web interface
+  main.py                        # CLI entry point
+  requirements.txt               # Python dependencies
+  .env.template                  # Environment variable template
+  Dockerfile                     # Container image definition
+  docker-compose.yml             # Compose configuration (network_mode: host)
+  LICENSE                        # MIT License
+```
 
----
+## License
 
-## ⏭️ Next Steps
+MIT License. See [LICENSE](LICENSE) for details.
 
-- Direct `.apkg` export for Anki decks
-- Multilingual prompt templates
-- More formats
+## Author
 
----
-
-## 📝 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-You are free to use, modify, and distribute this code for personal or commercial purposes, provided that proper credit is given.  
-This software is provided **"as is"**, without warranty of any kind.
-
-© 2025 Francisco José Rodríguez Cerezo
-
----
-
-## 👨‍💻 Author
-
-Created by **Francisco José Rodríguez Cerezo**
-[Portfolio](https://franrguezcer.github.io/portfolio/) | [LinkedIn](https://linkedin.com/in/franciscojoserodriguezcerezo)
+**Francisco Jose Rodriguez Cerezo**

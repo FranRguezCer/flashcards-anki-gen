@@ -1,0 +1,15 @@
+.venv/
+.git/
+.env
+.envrc
+__pycache__/
+*.csv
+*.jsonl
+notebook/
+assets/
+.claude/
+CLAUDE.md
+.gitignore
+.dockerignore
+LICENSE
+README.md

@@ -1,7 +1,11 @@
-﻿langchain>=0.2
-langchain-community
-langchain-openai
-python-dotenv
-pypdf
-tqdm  # Progress bar for generation
-openai  # OpenAI Python SDK if called directly
+langgraph>=0.2
+langchain>=0.2
+langchain-core>=0.2
+langchain-community>=0.2
+langchain-ollama>=0.1
+langchain-text-splitters>=0.2
+pypdf>=4.0
+gradio>=4.0
+python-dotenv>=1.0
+pandas>=2.0
+jupyter>=1.0
